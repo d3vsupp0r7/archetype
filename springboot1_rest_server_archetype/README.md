@@ -17,7 +17,7 @@
   * [H2 schema and data configuration](#h2-schema-and-data-configuration)
 * [Built with](#built-with)
 * [Useful commands](#useful-commands)
-  * [Windows - close task on open port](#windows-close-task-on-open-port)  
+  * [Windows - close task on open port](#windows---close-task-on-open-port)  
   
 # Scope
 
@@ -60,7 +60,7 @@ All tests are into relate folder: **{project}/scr/test/java** .
 This project expose a CRUD endpoints.  
 Inside the folder: **REST_API_Invocation/postman** you can find the **Postam** file, configured to test all REST API exposed.
 
-### REST Url Endpoints
+## REST Url Endpoints
 
 | HTTP Verb     | HTTP URL      | Request Body  | Meanings  |  
 | ------------- |:-------------:|--------------:|----------:| 
@@ -74,11 +74,11 @@ Inside the folder: **REST_API_Invocation/postman** you can find the **Postam** f
 |    DELETE     | http://localhost:8080/employees/employee/delete/{id}	 |       *NONE*             | Delete an employee by Id and return it as JSON Object  |
 
 
-#### POST - Create employee / PUT - Update employee
+### POST - Create employee / PUT - Update employee
 In order to create/update an employee you need a body that represent the *employee* to create/update.
 You can find the JSON file representing the body for POST Requests in order to create/update an employee in the folder **REST_API_Invocation**.
 
-| JSon file name     | Description      | 
+| JSON file name     | Description      | 
 | ------------------ |:----------------:|
 |employee_0.0.1.json | - id<br>- name<br>- surname |
 
