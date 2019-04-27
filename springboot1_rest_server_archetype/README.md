@@ -3,15 +3,19 @@
 # Table of Contents
 
 * [Scope](#scope)
-  * [Getting started](#getting-started)
+* [Getting started](#getting-started)
+  * [Inside Eclipse](#inside-eclipse)
   * [Prerequisite](#prerequisite)
     * [Installing](#installing)
-  * [Running Test](#running-test)
-  * [Built with](#built-with)
-  * [Useful references](#useful-references)  
-  * [Authors](#authors)  
-  * [Licence](#licence)
-  
+* [Running Test](#running-test)
+* [Rest service exposed](#rest-service-exposed)
+  * [REST Url Endpoints](#rest-url-endpoints)
+  * [Spring actuator endpoints](#spring-actuator-endpoints)
+* [H2 Configuration](#h2-configuration)
+  * [H2 property configuration](#h2-property-configuration)
+* [Built with](#built-with)
+* [Useful commands](#useful-commands)
+  * [Windows - close task on open port](#windowsw---close-task-on-open-port)  
   
 # Scope
 
@@ -23,7 +27,7 @@ As default configuration this module contains:
 * **springboot1**    : 1.5.20
 * In-Memory DataBase : H2
 
-## Getting started
+# Getting started
 
 ### Inside Eclipse
 
@@ -45,11 +49,11 @@ spring-boot:run
 ### Installing
 **None**
 
-## Running Test
+# Running Test
 All tests are into relate folder: **{project}/scr/test/java** .
 
 
-## Rest service exposed
+# Rest service exposed
 
 This project expose a CRUD endpoints.  
 Inside the folder: **REST_API_Invocation/postman** you can find the **Postam** file, configured to test all REST API exposed.
@@ -74,9 +78,7 @@ You can find the JSON file representing the body for POST Requests in order to c
 
 | JSon file name     | Description      | 
 | ------------------ |:----------------:|
-|employee_0.0.1.json | - id
-						- name
-					   - surname        |
+|employee_0.0.1.json | - id<br>- name<br>- surname |
 
 
 ### Spring actuator endpoints
@@ -181,9 +183,9 @@ As example:
 C:\Users\xxxxx>curl -X POST localhost:8080/actuator/shutdown
 {"message":"Shutting down, bye..."}
 
-## H2 Configuration
+# H2 Configuration
 
-### H2 property configuration
+## H2 property configuration
 
 In order to configure the H2 in-memory configuration you need to add these properties to your **application.properties**, or modify based on your needs.
 
@@ -231,7 +233,7 @@ An image that show the successful load of data into H2 database:
 
 ![H2 data](readme/resources/img/h2/2_h2_db_example_data.png)
 
-## Built with
+# Built with
 * [Java SDK Version](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - 1.8
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring](https://spring.io/) - Spring framework
@@ -242,15 +244,4 @@ An image that show the successful load of data into H2 database:
 netstat -ano | findstr :8080  
 taskkill /PID 6152 /F
 
-# Useful references
-* http://www.springboottutorial.com/spring-boot-validation-for-rest-services
-
-## Authors
-*TO_DO*
-
-## Licence
-*TO_DO*
-
-## Acknowledgments
-*TO_DO*
 
