@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "b3172d11-978d-499f-a762-5f074bd65d45",
+		"name": "springboot1_rest_server_archetype",
+		"description": "Springboot1 Rest server archetype.\nThis is a CRUD invocation example.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - allEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - employeeById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/10001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"10001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - employeeById - Exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/20001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"20001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - createEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_comment\": \"json version 0.0.1\",\r\n  \"id\" : 1,\r\n  \"name\" : \"Employee_name_fromCreate_1\",\r\n  \"surname\" : \"Employee_surname_fromCreate_1\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - createEmployee - returnCreatedEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\" : 1,\r\n  \"name\" : \"Employee_name_fromCreate_1\",\r\n  \"surname\" : \"Employee_surname_fromCreate_1\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/created",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"created"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - deleteEmployeeById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/10003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"10003"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - deleteEmployeeById - returnDeletedEmployee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/delete/90003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"delete",
+						"90003"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - deleteEmployeeById - Exception",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/delete/20001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"delete",
+						"20001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - updateEmployee - updateEmployeeById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_comment\": \"employee json - version 0.0.1\",\r\n  \"name\" : \"EmployeeName_1_Updated\",\r\n  \"surname\" : \"EmployeeSurname_1_Updated\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/10001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"10001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - updateEmployee - returnUpdatedEmployeeById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_comment\": \"employee json - version 0.0.1\",\r\n  \"name\" : \"EmployeeName_1_Updated\",\r\n  \"surname\" : \"EmployeeSurname_1_Updated\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/employee/updated/10001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"employee",
+						"updated",
+						"10001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
