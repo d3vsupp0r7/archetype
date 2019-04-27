@@ -13,9 +13,11 @@
   * [Spring actuator endpoints](#spring-actuator-endpoints)
 * [H2 Configuration](#h2-configuration)
   * [H2 property configuration](#h2-property-configuration)
+  * [H2 WEB Console configuration](#h2-web-console-configuration)
+  * [H2 schema and data configuration](#h2-schema-and-data-configuration)
 * [Built with](#built-with)
 * [Useful commands](#useful-commands)
-  * [Windows - close task on open port](#windowsw---close-task-on-open-port)  
+  * [Windows - close task on open port](#windows-close-task-on-open-port)  
   
 # Scope
 
@@ -197,7 +199,7 @@ spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=update  
 ```
 
-### H2 WEB Console configuration
+## H2 WEB Console configuration
 
 In order to use the H2 web console you need to add this configuration into your **application.properties** :
 
@@ -222,7 +224,7 @@ spring.h2.console.path=/console
 spring.h2.console.settings.trace=false
 spring.h2.console.settings.web-allow-others=false
 ```
-### H2 schema and data configuration
+## H2 schema and data configuration
 With H2 embedded configuration, you can simply add a sql files to have your database data populated an ready to go.
 
 You need to add under the path ${project.basedir}/scr/main/resources the following file:
