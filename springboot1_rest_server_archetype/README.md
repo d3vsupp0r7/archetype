@@ -17,7 +17,8 @@
   * [H2 schema and data configuration](#h2-schema-and-data-configuration)
 * [Built with](#built-with)
 * [Useful commands](#useful-commands)
-  * [Windows - close task on open port](#windows---close-task-on-open-port)  
+  * [Windows](#windows)  
+    * [Close task on open port](#close-task-on-open-port)
   
 # Scope
 
@@ -242,7 +243,8 @@ An image that show the successful load of data into H2 database:
 
 # Useful commands
 
-## Windows - close task on open port
+## Windows
+### Close task on open port
 netstat -ano | findstr :8080  
 taskkill /PID 6152 /F
 
