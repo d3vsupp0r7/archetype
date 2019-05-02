@@ -131,7 +131,7 @@ With this configuration you have some information like:
 
 ![Actuator default info](readme/resources/img/actuator/1_rest_server_actuator_info.png)
 
-It's is possible to add additional information, like an example coniguration below:
+It's is possible to add additional information, like an example configuration below:
 
 ```
 	<build>
