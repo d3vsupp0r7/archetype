@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.lba.spring4.archetype.multimodule</groupId>
+		<artifactId>spring4_archetype_multimodule-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<!-- Internal module definition -->
+	<artifactId>spring4_archetype_db_entity</artifactId>
+	<packaging>jar</packaging>
+
+	<!-- Dependency definition -->
+	<dependencies>
+
+		<!-- [START] Dependency shared by all modules must be defined into parent 
+			pom. Parent module: Module as <packaging>pom</packaging> element. [END] -->
+		<!-- Util library -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<!-- Slf4j Log -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+		</dependency>
+
+		<!-- [] Dependency used only by this module [] -->
+		<!-- Database framework -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- Copy dependency to a folder -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.2</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/list-dependency-used-by-module</outputDirectory>
+							<overWriteIfNewer>true</overWriteIfNewer>
+
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+</project>

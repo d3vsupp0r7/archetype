@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.lba.spring4.archetype.multimodule</groupId>
+	<artifactId>spring4_archetype_multimodule-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- 1. -->
+	<properties>
+
+		<!-- Define parent version into module defined as <packaging>pom</packaging> -->
+		<parent.version>0.0.1-SNAPSHOT</parent.version>
+
+		<!-- Java -->
+		<java.version>1.8</java.version>
+
+		<!-- Spring version -->
+		<spring.version>4.3.24.RELEASE</spring.version>
+		<spring-integration.version>4.3.20.RELEASE</spring-integration.version>
+		<spring-data.version>1.6.6.RELEASE</spring-data.version>
+
+		<!-- Database Framework -->
+		<hibernate.version>5.3.10.Final</hibernate.version>
+
+		<!-- Util library -->
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.6.1</slf4j.version>
+
+		<!-- Test libraries -->
+		<junit.version>4.12</junit.version>
+
+		<!-- In memory DB -->
+		<h2.version>1.4.199</h2.version>
+
+		<!-- Maven config -->
+		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+	</properties>
+
+	<!-- 2. -->
+	<modules>
+		<module>spring4_archetype_api</module>
+		<module>spring4_archetype_api_impl</module>
+		<module>spring4_archetype_transfer-object</module>
+		<module>spring4_archetype_business_logic_api</module>
+		<module>spring4_archetype_business_logic_impl</module>
+		<module>spring4_archetype_external_comunication_api</module>
+		<module>spring4_archetype_external_comunication_impl</module>
+		<module>spring4_archetype_config</module>
+		<module>spring4_archetype_util</module>
+		<module>spring4_archetype_web</module>
+		<module>spring4_archetype_db_entity</module>
+		<module>spring4_archetype_db_persistence</module>
+		<module>spring4_archetype_mvn_plugin</module>
+	</modules>
+
+	<!-- 3. Manage dependency used by all submodules -->
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Spring framework -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- Util library -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<!-- Slf4j Log -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<!-- Database Libs -->
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>${h2.version}</version>
+			</dependency>
+
+			<!-- Test Libs -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- Spring Test -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<!-- 4. -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
